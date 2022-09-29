@@ -1,0 +1,179 @@
+:root {
+  --color-black         : #000000;
+  --color-white         : #ffffff;
+  --color-pastel-1      : #ffd0fb;
+  --color-pastel-2      : #ffd5d8;
+  --color-red           : #fc4552;
+  --color-pink          : #f967f3;
+  --color-sky-blue-light: #c3eaff;
+  --color-green-light-1 : #adf9e7;
+  --color-green-light-2 : #8efda6;
+  --color-green-dark    : #0a1e23;
+  --color-gray          : #333333;
+  --color-purple        : #4c35aa;
+  --color-yellow        : #f0db4f;
+  --color-orange        : #e76b41;
+}
+
+* {
+  padding   : 0;
+  margin    : 0;
+  box-sizing: border-box;
+  font-size : 14px;
+}
+
+body {
+  background: linear-gradient(45deg, #f06291, #fffde7);
+}
+
+.container {
+  height         : 100vh;
+  width          : 100vw;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  flex-wrap      : wrap;
+}
+
+.calculator {
+  position             : relative;
+  height               : auto;
+  width                : auto;
+  padding              : 20px;
+  border-radius        : 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius   : 10px;
+  -ms-border-radius    : 10px;
+  -o-border-radius     : 10px;
+  box-shadow           : 0 0 30px rgb(187, 130, 130);
+  background-color     : var(--color-white);
+}
+
+.calculator #display {
+  color          : var(--color-green-dark);
+  margin         : 0 10px;
+  height         : 120px;
+  width          : auto;
+  display        : flex;
+  align-items    : flex-end;
+  justify-content: flex-end;
+  font-size      : 2.2rem;
+  font-weight    : 800;
+}
+
+.calculator #equals {
+  height: 130px;
+}
+
+.calculator button#clear {
+  background-color: var(--color-pastel-2);
+  color           : var(--color-red)
+}
+
+.calculator .btn-number {
+  background-color: var(--color-sky-blue-light);
+  color           : var(--color-black);
+}
+
+.calculator .btn-operator {
+  background-color: var(--color-pastel-1);
+  color           : var(--color-pink)
+}
+
+.calculator .btn-equals {
+  background-color: var(--color-green-light-1);
+  color           : var(--color-black);
+}
+
+.theme-toggler {
+  position: absolute;
+  top     : 30px;
+  right   : 30px;
+  color   : var(--color-white);
+  cursor  : pointer;
+  z-index : 1;
+}
+
+.theme-toggler::before {
+  content              : '';
+  position             : absolute;
+  height               : 30px;
+  width                : 30px;
+  top                  : 50%;
+  transform            : translate(-50%, 50%);
+  -webkit-transform    : translate(-50%, 50%);
+  -moz-transform       : translate(-50%, 50%);
+  -ms-transform        : translate(-50%, 50%);
+  -o-transform         : translate(-50%, 50%);
+  border-radius        : 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius   : 50%;
+  -ms-border-radius    : 50%;
+  -o-border-radius     : 50%;
+  background-color     : var(--color-gray);
+  z-index              : 1;
+}
+
+.theme-toggler.active {
+  color: var(--color-gray);
+}
+
+.theme-toggler.active::before {
+  background-color: var(--color-white);
+}
+
+button {
+  height               : 60px;
+  width                : 60px;
+  border               : 0;
+  border-radius        : 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius   : 30px;
+  -ms-border-radius    : 30px;
+  -o-border-radius     : 30px;
+  margin               : 5px;
+  font-size            : 1.2rem;
+  transition           : all 02s ease;
+  -webkit-transition   : all 02s ease;
+  -moz-transition      : all 02s ease;
+  -ms-transition       : all 0.2s ease;
+  -o-transition        : all 02s ease;
+}
+
+button:hover {
+  transform        : scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform   : scale(1.1);
+  -ms-transform    : scale(1.1);
+  -o-transform     : scale(1.1);
+}
+
+/* DARK THEME */
+.calculator.dark {
+  background: var(--color-black);
+}
+
+.calculator.dark #display {
+  color: var(--color-white);
+}
+
+.calculator.dark #clear {
+  background : var(--color-purple);
+  color      : var(--color-white);
+  font-weight: 700;
+}
+
+.calculator.dark .btn-number {
+  background-color: var(--color-green-light-2);
+}
+
+.calculator.dark .btn-operator {
+  background-color: var(--color-yellow);
+  color           : var(--color-black);
+}
+
+.calculator.dark .btn-equals {
+  background-color: var(--color-orange);
+  color           : var(--color-black);
+  font-weight     : 600;
+}
